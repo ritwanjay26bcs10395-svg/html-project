@@ -1,0 +1,184 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --grey-body-color:#dcdcdc;
+    --nav: #3d5a73;
+    --skills: #e8eef3;
+    --profile: #b8c9d6;
+    --about: white;
+    --grey-text: #8a8a8a;
+    --text: #22313f;
+    --white-text:white;
+}
+body{
+    background-color: var(--grey-body-color);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#container{
+    width:100%;
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 30vh 30vh 40vh;
+    grid-template-areas:
+    "nav skills profile"
+    "nav skills profile"
+    "about about about";
+
+}
+#about-me{
+    grid-area:about;
+    background-color: var(--about);
+    display:grid;
+    grid-template-columns: 60% 40%;
+    grid-template-areas: 
+    "para vid"
+    "para vid"
+    "social vid";
+}
+.paragraph{
+    grid-area: para;
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+}
+#social-parent{
+    grid-area:social;
+    display:flex;
+    padding:10px;
+    gap:20px;
+}
+#social-container{
+    display:flex;
+    gap:0px;
+    padding:20px;
+}
+.social-link{
+    border:2px dashed var(--nav);
+    margin:5px;
+    padding:10px;
+    width:fit-content;
+}
+.social-link:hover{
+    background-color: var(--nav);
+    outline:5px solid var(--nav);
+    color:var(--white-text);
+}
+.link{
+    text-decoration: none;
+    color: var(--nav);
+}
+.link:hover{
+    color:var(--white-text);
+}
+#video-container{
+    grid-area:vid;
+}
+img{
+    object-fit: contain;
+    height:100%;
+    width:100%;
+    border-radius: 5px;
+}
+#profile{
+    grid-area: profile;
+    background-color:var(--profile);
+    display:grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25vh auto;
+    grid-template-areas:
+    "img"
+    "details";
+
+}
+#details{
+    grid-area:details;
+    padding:20px;
+    margin:5px;
+    background-color: var(--about);
+    border-radius: 5px;
+}
+#img-container{
+    grid-area:img;
+    padding:10px;
+}
+#quote{
+    padding:20px 20px 0px 20px;
+}
+#nav-bar{
+    grid-area: nav;
+    background-color:var(--nav);
+    display:grid;
+    justify-content: center;
+    padding:10px;
+}
+#skills{
+    grid-area: skills;
+    background-color: var(--skills);
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+.skill{
+    border:2px solid var(--nav);
+    border-radius: 999px;
+    width: fit-content;
+    padding:0px 10px;
+}
+.w{
+    background-color: var(--white-text);
+    color:var(--nav);
+}
+.b{
+    background-color: var(--nav);
+    color:var(--white-text);
+}
+#skill-container{
+    display:flex;
+    gap:10px;
+}
+#nav-head{
+    color:var(--white-text)
+}
+ol{
+    color:var(--white-text);
+}
+@media (max-width:768px){
+#container{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "nav"
+        "profile"
+        "skills"
+        "about";
+}
+#profile{
+    height:auto;
+}
+#skill-container{
+    flex-wrap: wrap;
+}
+.skill{
+    white-space: nowrap;
+}
+#about-me{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "para"
+        "social"
+        "vid";
+}
+#social-parent{
+    display:flex;
+    flex-direction: column;
+}
+#social-container{
+    flex-wrap: wrap;
+}
+}
